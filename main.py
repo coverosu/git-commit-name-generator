@@ -7,12 +7,14 @@ from chatgpt_wrapper import ChatGPT
 def main() -> int:
 
     output = subprocess.run(
-        ["git", "diff"],
+        ["git", "diff", "HEAD"],
         stdout=subprocess.PIPE,
         stderr=subprocess.PIPE,
     )
 
     assert not output.stderr, "Error occurred when trying to get git difference"
+
+    assert not output.stdout, "No output was provided."
 
     chatgpt = ChatGPT()
 
