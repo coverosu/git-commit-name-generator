@@ -16,11 +16,11 @@ def main() -> int:
 
     chatgpt = ChatGPT()
 
-    commit_name = chatgpt.ask(
+    response = chatgpt.ask(
         f"Generate a git commit message/name mentioning all the changes from the following data:\n\n{output.stdout.decode()}"
     )
 
-    print(commit_name)
+    print(response)
 
     return 0
 
